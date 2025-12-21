@@ -1,0 +1,12 @@
+*.[ao]
+*.swp
+*.swo
+*.log
+*.tmp
+*.old
+0*buff
+0*buf
+*.bck
+*.bkp
+*.bak
+*~
