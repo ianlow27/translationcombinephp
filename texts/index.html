@@ -1,0 +1,82 @@
+<!-- li><a href="./thackerayNotesJourney.txt_CY.txt_out.html" target="_blank">
+  "NODIADAU AR DAITH O CORNHILL I GRAND CAIRO" Gan William Makepeace Thackeray
+  </a></li -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Links with Descriptions</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    li {
+      margin-bottom: 0.75rem;
+    }
+    .description {
+      display: block;
+      color: #555;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Testunau Cyfochrog</h1>
+  <ul id="linkList"></ul>
+
+  <script src="./listofnovels.js">
+  </script>
+  <script>
+    // Array of URLs with descriptions
+/*
+    const links = [
+      { url: "./thackerayNotesJourney.txt_CY.txt_out.html",
+        description: "NODIADAU AR DAITH O CORNHILL I GRAND CAIRO",
+        author: "William Makepeace Thackeray" },
+      { url: "./schnitzlerRoadOpen.txt_CY.txt_out.html",
+        description: "Y FFORDD I'R AGOR",
+        author: "Arthur Schnitzler" },
+      { url: "./.txt_CY.txt_out.html",
+        description: "",
+        author: "", }
+    ];
+*/
+
+    // Render links when the page loads
+    document.addEventListener("DOMContentLoaded", () => {
+      const list = document.getElementById("linkList");
+
+      links.forEach(link => {
+        if (link.description != ""){
+          const li = document.createElement("li");
+  
+          const a = document.createElement("a");
+          a.href = link.url;
+          a.textContent = link.description;
+          a.target = "_blank";
+  
+          const desc = document.createElement("span");
+          desc.className = "description";
+          desc.textContent = "gan " + link.author;
+  
+          li.appendChild(a);
+          li.appendChild(desc);
+          list.appendChild(li);
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
+
+  
+</body>
+</html>

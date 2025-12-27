@@ -7,6 +7,9 @@
 
 ## NOTES
 
+## 0.0.6_251227-2045 - add folder texts - This contains the index.html for the index of the parallel texts. The JavaScript file listofnovels.js has not been included. Please note that this is simply an array with the name "links" containing row elements consisting of "url", "description", and "author".
+-  Amendments as per the release description
+
 ## 0.0.5_251227-2023 - enhancements to translationcombine.php - fixed issue with triple and double dotted ellipses etc. so that sentences are not split on these.
 -  Amendments as per the release description
 

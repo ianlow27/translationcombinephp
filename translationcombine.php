@@ -2,7 +2,7 @@
 echo PHP_VERSION;
 $usage = "
   Usage: php $argv[0] [-h|<filename>]
-Version: 0.0.5_251227-2023
+Version: 0.0.6_251227-2045
   About: $argv[0] Combines 2 translated parallel texts into a single HTML page
  Author: Ian Low | Date: 2025-12-21 | Copyright (c) 2025 Ian Low | License: MIT
 Options:
