@@ -7,6 +7,9 @@
 
 ## NOTES
 
+## 0.0.5_251227-2023 - enhancements to translationcombine.php - fixed issue with triple and double dotted ellipses etc. so that sentences are not split on these.
+-  Amendments as per the release description
+
 ## 0.0.4_251227-2011 - enhancements to translationcombine.php - When detected full-stops amended regex to prevent sentence splitting if it encounters non-letter character immediately before words with full-stops such as Mr. Mrs and initials, e.g. A. B. C. etc.
 -  Amendments as per the release description
 

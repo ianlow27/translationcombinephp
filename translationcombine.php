@@ -2,7 +2,7 @@
 echo PHP_VERSION;
 $usage = "
   Usage: php $argv[0] [-h|<filename>]
-Version: 0.0.4_251227-2011
+Version: 0.0.5_251227-2023
   About: $argv[0] Combines 2 translated parallel texts into a single HTML page
  Author: Ian Low | Date: 2025-12-21 | Copyright (c) 2025 Ian Low | License: MIT
 Options:
@@ -59,6 +59,10 @@ foreach(explode("\n", file_get_contents($inputFile)) as $line){
   }
 
   if($bProcess){
+    $line = preg_replace("/\.\.\./u", "…", $line);
+    $line = preg_replace("/\.\./u", "‥", $line);
+    $line = preg_replace("/\. \. \./u", "…", $line);
+    $line = preg_replace("/\. \./u", "‥", $line);
     if($bEng){
       $txtEng.=$line. "\n\n";
     }else {
@@ -162,7 +166,7 @@ function split_SentencesXX(string $text): array {
         $text
     );
 }
-$ignoreFullStop = ['Mr.', 'Mrs.', 'mr.', 'mrs.', 'etc.', '&c.', 'St.', 'st.',
+$ignoreFullStop = ['Mr.', 'Mrs.', 'mr.', 'mrs.', 'etc.', '&c.', 'St.', 'st.', 'e.g.', 'i.e.',
 'A.', 'B.', 'C.', 'D.', 'E.', 'F.', 'G.', 'H.', 'I.', 'J.', 'K.', 'L.', 'M.', 'N.', 'O.', 'P.', 'Q.', 'R.', 'S.', 'T.', 'U.', 'V.', 'W.', 'X.', 'Y.', 'Z.', ];
 
 function splitSentences(string $text): array {
