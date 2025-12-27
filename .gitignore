@@ -10,3 +10,6 @@
 *.bkp
 *.bak
 *~
+1info/*
+*.txt
+*.html
