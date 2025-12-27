@@ -2,7 +2,7 @@
 echo PHP_VERSION;
 $usage = "
   Usage: php $argv[0] [-h|<filename>]
-Version: 0.0.3_251227-1737
+Version: 0.0.4_251227-2011
   About: $argv[0] Combines 2 translated parallel texts into a single HTML page
  Author: Ian Low | Date: 2025-12-21 | Copyright (c) 2025 Ian Low | License: MIT
 Options:
@@ -146,12 +146,12 @@ function insertMarker(string $para, string $char, int $count): string {
 }
 
 // ---- Sentence splitting ----
-function splitSentencesXXX(string $text): array {
+function split_SentencesXXX(string $text): array {
     $text = trim(preg_replace("/\s+/", " ", $text));
     if ($text === '') return [];
     return preg_split('/(?<=\.)\s+/', $text);
 }
-function splitSentencesXX(string $text): array {
+function split_SentencesXX(string $text): array {
     $text = trim(preg_replace("/\s+/", " ", $text));
     if ($text === '') return [];
 
@@ -174,7 +174,12 @@ function splitSentences(string $text): array {
     // Replace ignored dots with placeholder
     foreach ($ignoreFullStop as $abbr) {
         $safe = str_replace('.', '__DOT__', $abbr);
-        $text = str_replace($abbr, $safe, $text);
+
+        $pattern = '/(^|[^A-Za-z])' . preg_quote($abbr, '/') . '/';
+        $replacement = '$1' . $safe;
+
+        $text = preg_replace($pattern, $replacement, $text);
+        //$text = str_replace($abbr, $safe, $text);
     }
 
     // Split sentences
